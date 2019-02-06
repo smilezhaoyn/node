@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+
+ node.js是一个基于 Chrome JavaScript运行的一个平台；
+            基于Chrome V8引擎的  JavaScript运行环境
+
+    Node特征：缺一不可
+        1、单线程
+        2、事件驱动（某个条件完成之后，执行的一个函数相当于一个回调函数）
+        3、无阻塞I/O（输入/输出） 执行任务时候不阻塞通道
+
+node的应用场景
+    1、微博的聊天室
+    2、爬虫
+    3、大量请求Ajax的应用
+    4、web论坛
+
+node.js适合运用再高并发、I/O密集，少量业务逻辑的场景。
+
+
+let http = require('http');
+let {a} = require('路径')
+
+
+module.exports 导出文件
+在nodejs中，提供了exports 和 require 两个对象，其中 exports 是模块公开的接口，require 用于从外部获取一个模块的接口，即所获取模块的 exports 对象。而在exports抛出的接口中，如果你希望你的模块就想为一个特别的对象类型，请使用module.exports；如果希望模块成为一个传统的模块实例，请使用exports.xx方法；module.exports才是真正的接口，exports只不过是它的一个辅助工具。最终返回给调用的是module.exports而不是exports。
+
+Node应用由模块组成，采用CommonJS模块规范。根据这个规范，每个文件就是一个模块，有自己的作用域。在一个文件里面定义的变量、函数、类，都是私有的，对其他文件不可见。
+
+CommonJS规范规定，每个模块内部，module变量代表当前模块。这个变量是一个对象，它的exports属性（即module.exports）是对外的接口。加载某个模块，其实是加载该模块的module.exports属性。
+
+//一个文件只有一个输出口
+module.exports = {
+    a:10,
+    fn:function(){
+        console.log(1);
+    },
+    arr:[1,2,3,4]
+};
+
+正常的开发时候先拿到数据然后再进行判断
+
+
+let express = require('express');  //引路径   在node_modules下可以不带路径
+
+*/
+    
+let express = require('express');
+let app = express();
+app.use(express.static('www')); //静态文件的管理
+app.listen(88,()=>{
+    console.log('启动成功');
+})
+
+
+
+
+
+
+
+
+
+ </script>
+</body>
+</html>
